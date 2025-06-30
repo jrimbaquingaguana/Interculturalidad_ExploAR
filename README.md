@@ -1,4 +1,4 @@
-# 🌍 ExplorAR – Aplicación Móvil de Realidad Aumentada para Turismo
+# 🌍 ExplorAR – Haz de cada pado una historia para recordar
 
 **Tema del proyecto:**  
 Desarrollo de una aplicación móvil con realidad aumentada para la exploración turística.
