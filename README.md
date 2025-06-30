@@ -1,4 +1,4 @@
-# 🌍 ExplorAR – Haz de cada pado una historia para recordar
+# 🌍 ExplorAR – Haz de cada paso una historia para recordar
 Integrantes:
 Camila Morales
 Jose Imbaquinga
