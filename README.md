@@ -6,7 +6,7 @@ Nicole Lara
 Angelo Yanacallo
 
 **Tema del proyecto:**  
-Desarrollo de una aplicación móvil con realidad aumentada para la exploración turística.
+Desarrollo de una aplicación móvil con realidad aumentada para la exploración turística. De maner que se pueda palsmar la interculturalidad entre los pueblos y culturas de nuestro país Ecuador.
 
 ---
 
