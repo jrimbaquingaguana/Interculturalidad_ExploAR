@@ -1,4 +1,9 @@
 # 🌍 ExplorAR – Haz de cada pado una historia para recordar
+Integrantes:
+Camila Morales
+Jose Imbaquinga
+Nicole Lara
+Angelo Yanacallo
 
 **Tema del proyecto:**  
 Desarrollo de una aplicación móvil con realidad aumentada para la exploración turística.
