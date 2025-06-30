@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "884481263866",
+    "project_id": "happycam-9abb5",
+    "storage_bucket": "happycam-9abb5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884481263866:android:b4489e86063dc19f826143",
+        "android_client_info": {
+          "package_name": "com.example.happy_cam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOynBfbS-yyjQ-_NBkErWYTBzneErpSWs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

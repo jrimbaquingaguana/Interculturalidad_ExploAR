@@ -1,0 +1,74 @@
+{
+  "@@locale": "fr",
+  "welcome": "Bienvenue",
+  "loginTitle": "Connexion",
+  "username": "Nom d'utilisateur",
+  "password": "Mot de passe",
+  "loginButton": "Se connecter",
+  "required": "Requis",
+  "invalidCredentials": "Nom d'utilisateur ou mot de passe incorrect",
+  "noAccount": "Vous n'avez pas de compte ? Inscrivez-vous",
+  "registerButton": "S'inscrire",
+
+  "mainMenu": "Menu principal",
+  "viewMap": "Voir la carte",
+  "itinerary": "Itinéraire",
+  "gallery": "Galerie",
+  "comingSoon": "n'est pas encore implémenté",
+
+  "registerTitle": "Inscription",
+  "name": "Prénom",
+  "lastname": "Nom de famille",
+  "email": "Courriel",
+  "invalidEmail": "Courriel invalide",
+  "invalidName": "Ne peut contenir de chiffres ou de caractères spéciaux",
+  "shortPassword": "Minimum 6 caractères",
+  "repeatPassword": "Répéter le mot de passe",
+  "passwordMismatch": "Les mots de passe ne correspondent pas",
+  "registerSuccess": "Inscription réussie",
+
+  "logout": "Se déconnecter",
+  "settings": "Paramètres",
+  "language": "Langue",
+  "changeLanguage": "Changer de langue",
+
+  "forgotPassword": "Mot de passe oublié ?",
+  "resetPassword": "Réinitialiser le mot de passe",
+  "sendResetLink": "Envoyer le lien de réinitialisation",
+  "resetEmailSent": "E-mail de réinitialisation envoyé",
+
+  "errorOccurred": "Une erreur est survenue",
+  "loading": "Chargement...",
+
+  "profile": "Profil",
+  "editProfile": "Modifier le profil",
+
+  "submit": "Soumettre",
+  "cancel": "Annuler",
+
+  "addCity": "Ajouter une ville",
+  "editDestination": "Modifier la destination",
+  "deleteDestination": "Supprimer la destination",
+  "confirmDeleteDestination": "Voulez-vous supprimer cette destination ainsi que tous ses jours et activités ?",
+  "addActivity": "Ajouter une activité",
+  "editActivity": "Modifier l'activité",
+  "writeHere": "Écrivez ici...",
+  "save": "Enregistrer",
+  "noDestinationsAdded": "Aucune destination ajoutée",
+  "noActivitiesYet": "Pas encore d'activités.",
+  "edit": "Modifier",
+  "delete": "Supprimer",
+  "addNewDestination": "Ajouter une nouvelle destination",
+
+  "day": "Jour",
+  "addDay": "Ajouter un jour",
+  "editDay": "Modifier le jour",
+  "invalidDayNumber": "Numéro de jour invalide",
+  "selectColor": "Choisir une couleur",
+
+  "addPhoto": "Ajouter une photo",
+  "selectCityFirst": "Veuillez d'abord sélectionner une ville",
+  "noPhotosYet": "Aucune photo pour l'instant",
+  "confirmDeleteCity": "Souhaitez-vous supprimer \"{city}\" et toutes ses photos ?"
+
+}

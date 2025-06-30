@@ -1,0 +1,74 @@
+{
+  "@@locale": "pt",
+  "welcome": "Bem-vindo",
+  "loginTitle": "Login",
+  "username": "Nome de usuário",
+  "password": "Senha",
+  "loginButton": "Entrar",
+  "required": "Obrigatório",
+  "invalidCredentials": "Nome de usuário ou senha incorretos",
+  "noAccount": "Não tem uma conta? Cadastre-se",
+  "registerButton": "Registrar",
+
+  "mainMenu": "Menu principal",
+  "viewMap": "Ver mapa",
+  "itinerary": "Itinerário",
+  "gallery": "Galeria",
+  "comingSoon": "ainda não foi implementado",
+
+  "registerTitle": "Cadastro",
+  "name": "Nome",
+  "lastname": "Sobrenome",
+  "email": "Email",
+  "invalidEmail": "Email inválido",
+  "invalidName": "Não pode conter números ou caracteres especiais",
+  "shortPassword": "Mínimo de 6 caracteres",
+  "repeatPassword": "Repetir senha",
+  "passwordMismatch": "As senhas não coincidem",
+  "registerSuccess": "Cadastro realizado com sucesso",
+
+  "logout": "Sair",
+  "settings": "Configurações",
+  "language": "Idioma",
+  "changeLanguage": "Mudar idioma",
+
+  "forgotPassword": "Esqueceu a senha?",
+  "resetPassword": "Redefinir senha",
+  "sendResetLink": "Enviar link para redefinição",
+  "resetEmailSent": "E-mail de redefinição enviado",
+
+  "errorOccurred": "Ocorreu um erro",
+  "loading": "Carregando...",
+
+  "profile": "Perfil",
+  "editProfile": "Editar perfil",
+
+  "submit": "Enviar",
+  "cancel": "Cancelar",
+
+  "addCity": "Adicionar cidade",
+  "editDestination": "Editar destino",
+  "deleteDestination": "Excluir destino",
+  "confirmDeleteDestination": "Deseja excluir este destino e todos os seus dias e atividades?",
+  "addActivity": "Adicionar atividade",
+  "editActivity": "Editar atividade",
+  "writeHere": "Escreva aqui...",
+  "save": "Salvar",
+  "noDestinationsAdded": "Nenhum destino adicionado",
+  "noActivitiesYet": "Ainda não há atividades.",
+  "edit": "Editar",
+  "delete": "Excluir",
+  "addNewDestination": "Adicionar novo destino",
+
+  "day": "Dia",
+  "addDay": "Adicionar dia",
+  "editDay": "Editar dia",
+  "invalidDayNumber": "Número de dia inválido",
+  "selectColor": "Selecionar cor",
+
+  "addPhoto": "Adicionar foto",
+  "selectCityFirst": "Por favor, selecione uma cidade primeiro",
+  "noPhotosYet": "Nenhuma foto ainda",
+  "confirmDeleteCity": "Você deseja excluir \"{city}\" e todas as suas fotos?"
+
+}

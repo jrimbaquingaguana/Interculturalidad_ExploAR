@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'user_storage.dart';
 import 'menu_page.dart';
 
@@ -38,10 +39,10 @@ class _RegisterPageState extends State<RegisterPage> {
       await _userStorage.addUser(user);
 
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Registro exitoso'),
+        SnackBar(
+          content: Text(AppLocalizations.of(context)!.registerSuccess),
           backgroundColor: Colors.green,
-          duration: Duration(seconds: 2),
+          duration: const Duration(seconds: 2),
         ),
       );
 
@@ -68,12 +69,11 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Registro',
-          style: TextStyle(color: Colors.white),
-        ),
+        title: Text(loc.registerTitle, style: const TextStyle(color: Colors.white)),
         backgroundColor: Colors.indigo,
         centerTitle: true,
         elevation: 5,
@@ -87,11 +87,11 @@ class _RegisterPageState extends State<RegisterPage> {
             children: [
               TextFormField(
                 controller: _nombreController,
-                decoration: _inputDecoration('Nombre', Icons.person),
+                decoration: _inputDecoration(loc.name, Icons.person),
                 validator: (value) {
-                  if (value == null || value.isEmpty) return 'Requerido';
+                  if (value == null || value.isEmpty) return loc.required;
                   if (!_nameRegExp.hasMatch(value)) {
-                    return 'No puede contener números ni caracteres especiales';
+                    return loc.invalidName;
                   }
                   return null;
                 },
@@ -99,11 +99,11 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(height: 16),
               TextFormField(
                 controller: _apellidoController,
-                decoration: _inputDecoration('Apellido', Icons.person_outline),
+                decoration: _inputDecoration(loc.lastname, Icons.person_outline),
                 validator: (value) {
-                  if (value == null || value.isEmpty) return 'Requerido';
+                  if (value == null || value.isEmpty) return loc.required;
                   if (!_nameRegExp.hasMatch(value)) {
-                    return 'No puede contener números ni caracteres especiales';
+                    return loc.invalidName;
                   }
                   return null;
                 },
@@ -112,11 +112,11 @@ class _RegisterPageState extends State<RegisterPage> {
               TextFormField(
                 controller: _correoController,
                 keyboardType: TextInputType.emailAddress,
-                decoration: _inputDecoration('Correo', Icons.email),
+                decoration: _inputDecoration(loc.email, Icons.email),
                 validator: (value) {
-                  if (value == null || value.isEmpty) return 'Requerido';
+                  if (value == null || value.isEmpty) return loc.required;
                   if (!_emailRegExp.hasMatch(value)) {
-                    return 'Correo inválido';
+                    return loc.invalidEmail;
                   }
                   return null;
                 },
@@ -124,15 +124,15 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(height: 16),
               TextFormField(
                 controller: _usuarioController,
-                decoration: _inputDecoration('Usuario', Icons.account_circle),
+                decoration: _inputDecoration(loc.username, Icons.account_circle),
                 validator: (value) =>
-                    (value == null || value.isEmpty) ? 'Requerido' : null,
+                    (value == null || value.isEmpty) ? loc.required : null,
               ),
               const SizedBox(height: 16),
               TextFormField(
                 controller: _passController,
                 obscureText: !_showPassword,
-                decoration: _inputDecoration('Contraseña', Icons.lock).copyWith(
+                decoration: _inputDecoration(loc.password, Icons.lock).copyWith(
                   suffixIcon: IconButton(
                     icon: Icon(
                       _showPassword
@@ -147,8 +147,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
                 validator: (value) {
-                  if (value == null || value.isEmpty) return 'Requerido';
-                  if (value.length < 6) return 'Mínimo 6 caracteres';
+                  if (value == null || value.isEmpty) return loc.required;
+                  if (value.length < 6) return loc.shortPassword;
                   return null;
                 },
               ),
@@ -156,9 +156,8 @@ class _RegisterPageState extends State<RegisterPage> {
               TextFormField(
                 controller: _repeatPassController,
                 obscureText: !_showRepeatPassword,
-                decoration:
-                    _inputDecoration('Repetir Contraseña', Icons.lock_outline)
-                        .copyWith(
+                decoration: _inputDecoration(loc.repeatPassword, Icons.lock_outline)
+                    .copyWith(
                   suffixIcon: IconButton(
                     icon: Icon(
                       _showRepeatPassword
@@ -173,8 +172,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
                 validator: (value) {
-                  if (value == null || value.isEmpty) return 'Requerido';
-                  if (value != _passController.text) return 'No coinciden';
+                  if (value == null || value.isEmpty) return loc.required;
+                  if (value != _passController.text) return loc.passwordMismatch;
                   return null;
                 },
               ),
@@ -196,10 +195,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       color: Colors.white,
                     ),
                   ),
-                  child: const Text(
-                    'Registrarse',
-                    style: TextStyle(color: Colors.white),
-                  ),
+                  child: Text(loc.registerButton, style: const TextStyle(color: Colors.white)),
                 ),
               ),
             ],

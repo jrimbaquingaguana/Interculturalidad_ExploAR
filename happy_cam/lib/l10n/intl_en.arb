@@ -1,0 +1,74 @@
+{
+  "@@locale": "en",
+  "welcome": "Welcome!",
+  "loginTitle": "Login",
+  "username": "Username",
+  "password": "Password",
+  "loginButton": "Login",
+  "required": "Required",
+  "invalidCredentials": "Incorrect username or password",
+  "noAccount": "Don't have an account? Register",
+  "registerButton": "Register",
+
+  "mainMenu": "Main Menu",
+  "viewMap": "View Map",
+  "itinerary": "Itinerary",
+  "gallery": "Gallery",
+  "comingSoon": "is not yet implemented",
+
+  "registerTitle": "Register",
+  "name": "First name",
+  "lastname": "Last name",
+  "email": "Email",
+  "invalidEmail": "Invalid email",
+  "invalidName": "Cannot contain numbers or special characters",
+  "shortPassword": "Minimum 6 characters",
+  "repeatPassword": "Repeat password",
+  "passwordMismatch": "Passwords do not match",
+  "registerSuccess": "Registration successful",
+
+  "logout": "Logout",
+  "settings": "Settings",
+  "language": "Language",
+  "changeLanguage": "Change language",
+
+  "forgotPassword": "Forgot password?",
+  "resetPassword": "Reset password",
+  "sendResetLink": "Send reset link",
+  "resetEmailSent": "Reset email sent",
+
+  "errorOccurred": "An error occurred",
+  "loading": "Loading...",
+
+  "profile": "Profile",
+  "editProfile": "Edit profile",
+
+  "submit": "Submit",
+  "cancel": "Cancel",
+
+  "addCity": "Add city",
+  "editDestination": "Edit destination",
+  "deleteDestination": "Delete destination",
+  "confirmDeleteDestination": "Do you want to delete this destination and all its days and activities?",
+  "addActivity": "Add activity",
+  "editActivity": "Edit activity",
+  "writeHere": "Write here...",
+  "save": "Save",
+  "noDestinationsAdded": "No destinations added",
+  "noActivitiesYet": "No activities yet.",
+  "edit": "Edit",
+  "delete": "Delete",
+  "addNewDestination": "Add new destination",
+
+  "day": "Day",
+  "addDay": "Add day",
+  "editDay": "Edit day",
+  "invalidDayNumber": "Invalid day number",
+  "selectColor": "Select color",
+
+  "addPhoto": "Add photo",
+  "selectCityFirst": "Please select a city first",
+  "noPhotosYet": "No photos yet",
+  "confirmDeleteCity": "Do you want to delete \"{city}\" and all its photos?"
+
+}
