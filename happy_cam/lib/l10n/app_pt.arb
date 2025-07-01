@@ -69,6 +69,14 @@
   "addPhoto": "Adicionar foto",
   "selectCityFirst": "Por favor, selecione uma cidade primeiro",
   "noPhotosYet": "Nenhuma foto ainda",
-  "confirmDeleteCity": "Você deseja excluir \"{city}\" e todas as suas fotos?"
+  "confirmDeleteCity": "Você deseja excluir \"{city}\" e todas as suas fotos?",
 
+  "administer": "Administrar",
+
+  "createUser": "Criar usuário",
+  "editUser": "Editar usuário",
+  "deleteSuccess": "Usuário excluído com sucesso",
+  "role": "Função",
+  "usuario": "Usuário",
+  "administrador": "Administrador"
 }

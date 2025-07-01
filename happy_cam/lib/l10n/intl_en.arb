@@ -69,6 +69,14 @@
   "addPhoto": "Add photo",
   "selectCityFirst": "Please select a city first",
   "noPhotosYet": "No photos yet",
-  "confirmDeleteCity": "Do you want to delete \"{city}\" and all its photos?"
+  "confirmDeleteCity": "Do you want to delete \"{city}\" and all its photos?",
 
+  "administer": "Administer",
+
+  "createUser": "Create User",
+  "editUser": "Edit User",
+  "deleteSuccess": "User deleted successfully",
+  "role": "Role",
+  "usuario": "User",
+  "administrador": "Administrator"
 }

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'itinerary_page.dart';
-import 'gallery_page.dart'; // Importamos la nueva pantalla de galería
+import 'gallery_page.dart';
+import 'AdminPage.dart';  // Importa la página de administración
 
 class MenuPage extends StatelessWidget {
-  const MenuPage({super.key});
+  final Map<String, dynamic> user;
+
+  const MenuPage({super.key, required this.user});
 
   void _showComingSoon(BuildContext context, String feature) {
     final loc = AppLocalizations.of(context)!;
@@ -48,6 +51,19 @@ class MenuPage extends StatelessWidget {
         },
       },
     ];
+
+    if (user['rol'] == 'administrador') {
+      items.add({
+        'label': loc.administer, // Usar traducción
+        'image': 'assets/images/users.png',
+        'action': () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AdminPage()),
+          );
+        },
+      });
+    }
 
     return Scaffold(
       backgroundColor: const Color(0xFFE5E9F7),

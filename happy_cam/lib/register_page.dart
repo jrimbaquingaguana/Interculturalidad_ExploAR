@@ -35,7 +35,14 @@ class _RegisterPageState extends State<RegisterPage> {
         "correo": _correoController.text.trim(),
         "usuario": _usuarioController.text.trim(),
         "contrasena": _passController.text,
+        "rol": "usuario", // ✅ Rol asignado automáticamente
       };
+
+      final exists = (await _userStorage.loadUsers())
+          .any((u) => u['usuario'] == user['usuario']);
+
+     
+
       await _userStorage.addUser(user);
 
       ScaffoldMessenger.of(context).showSnackBar(
@@ -48,7 +55,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
       Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(builder: (context) => const MenuPage()),
+        MaterialPageRoute(builder: (context) => MenuPage(user: user)),
         (route) => false,
       );
     }
@@ -135,9 +142,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 decoration: _inputDecoration(loc.password, Icons.lock).copyWith(
                   suffixIcon: IconButton(
                     icon: Icon(
-                      _showPassword
-                          ? Icons.visibility
-                          : Icons.visibility_off,
+                      _showPassword ? Icons.visibility : Icons.visibility_off,
                     ),
                     onPressed: () {
                       setState(() {
@@ -156,13 +161,10 @@ class _RegisterPageState extends State<RegisterPage> {
               TextFormField(
                 controller: _repeatPassController,
                 obscureText: !_showRepeatPassword,
-                decoration: _inputDecoration(loc.repeatPassword, Icons.lock_outline)
-                    .copyWith(
+                decoration: _inputDecoration(loc.repeatPassword, Icons.lock_outline).copyWith(
                   suffixIcon: IconButton(
                     icon: Icon(
-                      _showRepeatPassword
-                          ? Icons.visibility
-                          : Icons.visibility_off,
+                      _showRepeatPassword ? Icons.visibility : Icons.visibility_off,
                     ),
                     onPressed: () {
                       setState(() {

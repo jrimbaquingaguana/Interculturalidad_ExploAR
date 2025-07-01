@@ -28,7 +28,6 @@ class _LoginPageState extends State<LoginPage> {
 
   final UserStorage _userStorage = UserStorage();
   bool _showPassword = false;
-
   late String _selectedLanguageCode;
 
   @override
@@ -40,7 +39,6 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void didUpdateWidget(covariant LoginPage oldWidget) {
     super.didUpdateWidget(oldWidget);
-    // Sincronizar el idioma si cambió desde el widget padre
     if (widget.currentLocale.languageCode != _selectedLanguageCode) {
       setState(() {
         _selectedLanguageCode = widget.currentLocale.languageCode;
@@ -50,30 +48,54 @@ class _LoginPageState extends State<LoginPage> {
 
   void _onLanguageChanged(String? newCode) {
     if (newCode != null && widget.supportedLanguages.containsKey(newCode)) {
+      widget.onLocaleChange(newCode);
       setState(() {
         _selectedLanguageCode = newCode;
       });
-      widget.onLocaleChange(newCode);
     }
   }
 
   void _login() async {
+    final inputUser = _userController.text.trim();
+    final inputPass = _passController.text;
+
+    // 1. Verificar admin hardcoded
+    if (inputUser == 'admin' && inputPass == 'admin') {
+      final adminUser = {
+        "usuario": "admin",
+        "contrasena": "admin",
+        "rol": "administrador",
+        "nombre": "Admin",
+        "apellido": "Principal",
+        "correo": "admin@admin.com",
+      };
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => MenuPage(user: adminUser)),
+      );
+      return;
+    }
+
+    // 2. Verificar usuarios desde JSON
     final users = await _userStorage.loadUsers();
     final user = users.firstWhere(
       (u) =>
-          u['usuario'] == _userController.text &&
-          u['contrasena'] == _passController.text,
+          u['usuario'] == inputUser && u['contrasena'] == inputPass,
       orElse: () => {},
     );
 
     if (user.isNotEmpty) {
+      // Asegúrate de que el registro añade "rol": "usuario"
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const MenuPage()),
+        MaterialPageRoute(builder: (context) => MenuPage(user: user)),
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(AppLocalizations.of(context)!.invalidCredentials)),
+        SnackBar(
+          content: Text(AppLocalizations.of(context)!.invalidCredentials),
+          backgroundColor: Colors.redAccent,
+        ),
       );
     }
   }
@@ -86,7 +108,6 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         title: Text(loc.loginTitle),
         centerTitle: true,
-        // Aquí removí el 'actions' para quitar el menú desplegable
       ),
       body: Stack(
         fit: StackFit.expand,
@@ -98,7 +119,8 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 40),
               child: Card(
                 elevation: 12,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24)),
                 child: Padding(
                   padding: const EdgeInsets.all(24),
                   child: Form(
@@ -129,11 +151,8 @@ class _LoginPageState extends State<LoginPage> {
                               icon: Icon(_showPassword
                                   ? Icons.visibility
                                   : Icons.visibility_off),
-                              onPressed: () {
-                                setState(() {
-                                  _showPassword = !_showPassword;
-                                });
-                              },
+                              onPressed: () =>
+                                  setState(() => _showPassword = !_showPassword),
                             ),
                           ),
                           validator: (value) =>
@@ -145,34 +164,33 @@ class _LoginPageState extends State<LoginPage> {
                           height: 48,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12),
-                              ),
                               backgroundColor: const Color(0xFF2575fc),
-                              foregroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12)),
                             ),
                             onPressed: () {
-                              if (_formKey.currentState!.validate()) _login();
+                              if (_formKey.currentState!.validate()) {
+                                _login();
+                              }
                             },
-                            child: Text(loc.loginButton,
-                                style: const TextStyle(fontSize: 18)),
+                            child: Text(
+                              loc.loginButton,
+                              style: const TextStyle(fontSize: 18),
+                            ),
                           ),
                         ),
                         const SizedBox(height: 12),
                         TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) => const RegisterPage()),
-                            );
-                          },
+                          onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const RegisterPage()),
+                          ),
                           child: Text(
                             loc.noAccount,
                             style: const TextStyle(
-                              color: Color(0xFF1A237E),
-                              fontWeight: FontWeight.bold,
-                            ),
+                                color: Color(0xFF1A237E),
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                       ],

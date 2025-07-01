@@ -60,6 +60,25 @@ class UserStorage {
     return true;
   }
 
+  // Actualiza un usuario existente por su nombre de usuario
+  Future<void> updateUser(Map<String, dynamic> user) async {
+    final users = await _readUsers();
+    final index = users.indexWhere((u) => u['usuario'] == user['usuario']);
+    if (index != -1) {
+      users[index] = user;
+      await _writeUsers(users);
+    } else {
+      throw Exception('Usuario no encontrado');
+    }
+  }
+
+  // Elimina un usuario por su nombre de usuario
+  Future<void> deleteUser(String usuario) async {
+    final users = await _readUsers();
+    users.removeWhere((u) => u['usuario'] == usuario);
+    await _writeUsers(users);
+  }
+
   // Carga la lista completa de usuarios
   Future<List<Map<String, dynamic>>> loadUsers() async {
     return await _readUsers();
